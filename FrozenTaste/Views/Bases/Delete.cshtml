@@ -1,0 +1,30 @@
+﻿@model FrozenTaste.Models.Bases
+
+
+
+<h2>Borrar</h2>
+
+<h3>Estas seguro de borrar este item?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Base)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

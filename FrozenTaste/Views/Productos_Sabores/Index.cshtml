@@ -1,0 +1,39 @@
+﻿@model IEnumerable<FrozenTaste.Models.Productos_Sabores>
+
+@{
+    ViewBag.Title = "Productos y Sabores";
+}
+
+<h2>Productos y Sabores</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Productos.Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sabores.Sabor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Productos.Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sabores.Sabor)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id_Productos_Sabor }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Detalles", "Details", new { id = item.Id_Productos_Sabor }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Productos_Sabor }, new { @class = "btn btn-danger" }) 
+        </td>
+    </tr>
+}
+
+</table>

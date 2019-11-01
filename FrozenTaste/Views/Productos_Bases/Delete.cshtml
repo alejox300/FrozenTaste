@@ -1,0 +1,40 @@
+﻿@model FrozenTaste.Models.Productos_Bases
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>Estas seguro de borrar este item?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bases.Base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bases.Base)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productos.Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productos.Producto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

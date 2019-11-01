@@ -1,0 +1,33 @@
+﻿@model IEnumerable<FrozenTaste.Models.Bases>
+
+@{
+    ViewBag.Title = "Bases";
+}
+
+<h2>Bases</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create", new{ }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Base)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Base)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id_Base }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id_Base }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Id_Base }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,26 @@
+﻿@model FrozenTaste.Models.Sabores
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Sabores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sabor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sabor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_Sabor }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

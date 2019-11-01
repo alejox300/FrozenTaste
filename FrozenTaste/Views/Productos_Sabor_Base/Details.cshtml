@@ -1,0 +1,42 @@
+﻿@model FrozenTaste.Models.Productos_Sabor_Base
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Productos_Sabor_Base</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bases.Base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bases.Base)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productos.Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productos.Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sabores.Sabor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sabores.Sabor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_Productos_Sabor_Base }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>
